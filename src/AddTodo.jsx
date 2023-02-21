@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { FaPlus } from 'react-icons/fa';
 
 function AddTodo({ onAddTodo }) {
   const [newTodo, setNewTodo] = useState('');
+
   const handleNewTodo = (e) => {
     setNewTodo(e.target.value);
   };
@@ -17,11 +17,9 @@ function AddTodo({ onAddTodo }) {
     <form onSubmit={handleSubmit}>
       <input className="add-todo" type="text" placeholder="Add your new todo" value={newTodo} onChange={handleNewTodo} />
 
-      <button className="todo-button">
-        <FaPlus />
-      </button>
+      <button className="btn-add-task">Add Task</button>
     </form>
   );
 }
-// FaPlusSquare
+
 export default AddTodo;

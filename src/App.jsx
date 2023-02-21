@@ -1,20 +1,36 @@
 import './App.css';
+import { useState } from 'react';
 import AddTodo from './AddTodo';
+import TodoList from './TodoList';
 
-{
-  /* <FaTrash />
-      <FaPenSquare /> */
-}
-import { FaTrash } from 'react-icons/fa';
-import { FaPenSquare } from 'react-icons/fa';
+import { nanoid } from 'nanoid';
+
 function App() {
+  const [todos, setTodos] = useState([
+    {
+      taskName: 'Study Web Development',
+      taskId: nanoid(),
+    },
+    {
+      taskName: 'Study Quran',
+      taskId: nanoid(),
+    },
+  ]);
+
   const onAddTodo = (todo) => {
-    console.log('todo from app', todo);
+    const newTodo = {
+      taskName: todo,
+      taskId: nanoid(),
+    };
+    setTodos((prevTodos) => [...prevTodos, newTodo]);
   };
+
   return (
     <div className="App">
       <h1>Todo App</h1>
       <AddTodo onAddTodo={onAddTodo} />
+
+      <TodoList todos={todos} />
     </div>
   );
 }
