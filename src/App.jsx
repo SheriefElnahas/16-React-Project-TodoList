@@ -1,12 +1,12 @@
 import './App.css';
 import { useState } from 'react';
-import AddTodo from './AddTodo';
-import TodoList from './TodoList';
+import AddTask from './AddTask';
+import TaskList from './TaskList';
 
 import { nanoid } from 'nanoid';
 
 function App() {
-  const [todos, setTodos] = useState([
+  const [tasks, setTasks] = useState([
     {
       taskName: 'Study Web Development',
       taskId: nanoid(),
@@ -17,20 +17,20 @@ function App() {
     },
   ]);
 
-  const onAddTodo = (todo) => {
-    const newTodo = {
-      taskName: todo,
+  const onAddTask = (task) => {
+    const newTask = {
+      taskName: task,
       taskId: nanoid(),
     };
-    setTodos((prevTodos) => [...prevTodos, newTodo]);
+    setTasks((prevTasks) => [...prevTasks, newTask]);
   };
 
   return (
     <div className="App">
       <h1>Todo App</h1>
-      <AddTodo onAddTodo={onAddTodo} />
+      <AddTask onAddTask={onAddTask} />
 
-      <TodoList todos={todos} />
+      <TaskList tasks={tasks} />
     </div>
   );
 }

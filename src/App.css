@@ -19,23 +19,25 @@ body {
   margin-bottom: 2rem;
 }
 
-.add-todo {
+/* Add Task Component */
+.Add-Task {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Add-Task-input {
   width: 80%;
   padding: 1rem;
   border: 1px solid #b8b8b8;
   font-weight: bold;
 }
 
-.add-todo::placeholder {
+.Add-Task-input ::placeholder {
   font-size: 1.2rem;
 }
-form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.btn-add-task {
+.Add-Task-btn {
   background: #a5d5f8;
   border: none;
   padding: 1.125rem 1rem;
@@ -46,17 +48,19 @@ form {
   font-size: 0.9rem;
 }
 
-.btn-add-task:hover {
+.Add-Task-btn:hover {
   background: #49a6e9;
   color: #fff;
 }
 
-.todo-list {
+/* TaskList */
+
+.Task-List {
   list-style: none;
   padding: 0;
   margin-left: 3px;
 }
-.todo {
+.Task-List-li {
   padding: 1rem 1.2rem;
   margin: 10px 0;
   font-weight: bold;
@@ -68,9 +72,11 @@ form {
   letter-spacing: 1px;
 }
 
-.todo:hover {
+.Task-List-li:hover {
   background: #00ffff;
 }
+
+/* Icons */
 .icons > svg {
   transition: all 0.2s linear;
 }

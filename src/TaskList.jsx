@@ -3,14 +3,14 @@ import React from 'react';
 import { FaTrash } from 'react-icons/fa';
 import { FaPen } from 'react-icons/fa';
 
-function TodoList({ todos, onEditTodo }) {
+function TaskList({ tasks, onEditTodo }) {
   return (
     <div>
-      <ul className="todo-list">
-        {todos.map((todo) => {
+      <ul className="Task-List">
+        {tasks.map(({ taskName, taskId }) => {
           return (
-            <li className="todo" key={todo.taskId}>
-              {todo.taskName}
+            <li className="Task-List-li" key={taskId}>
+              {taskName}
               <div className="icons">
                 <FaPen />
                 <FaTrash />
@@ -23,4 +23,4 @@ function TodoList({ todos, onEditTodo }) {
   );
 }
 
-export default TodoList;
+export default TaskList;
