@@ -1,21 +1,25 @@
-import React from 'react';
+import { useState } from 'react';
 
 import { FaTrash } from 'react-icons/fa';
 import { FaPen } from 'react-icons/fa';
 
-function TaskList({ tasks, onEditTodo }) {
+function TaskList({ tasks, onEditClick }) {
+  const [editTask, setEditTask] = useState(false);
+
   return (
     <div>
       <ul className="Task-List">
         {tasks.map(({ taskName, taskId }) => {
           return (
-            <li className="Task-List-li" key={taskId}>
-              {taskName}
-              <div className="icons">
-                <FaPen />
-                <FaTrash />
-              </div>
-            </li>
+            <div key={taskId}>
+              <li className="Task-List-li">
+                {taskName}
+                <div className="icons">
+                  <FaPen onClick={() => onEditClick(taskId)} />
+                  <FaTrash />
+                </div>
+              </li>
+            </div>
           );
         })}
       </ul>
