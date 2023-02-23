@@ -24,7 +24,7 @@ function EditTask({ selectedTask, onUpdateTask }) {
   return (
     <form onSubmit={handleSubmit} className="Add-Task">
       <input className="Add-Task-input" type="text" value={newInput} onChange={handleNewInput} />
-      <button className="Add-Task-btn">Edit Task</button>
+      <button className="Edit-Task-btn">Edit Task</button>
     </form>
   );
 }

@@ -37,8 +37,8 @@ body {
   font-size: 1.2rem;
 }
 
-.Add-Task-btn {
-  background: #a5d5f8;
+.Add-Task-btn,
+.Edit-Task-btn {
   border: none;
   padding: 1.125rem 1rem;
   cursor: pointer;
@@ -47,10 +47,20 @@ body {
   letter-spacing: 1px;
   font-size: 0.9rem;
 }
+.Add-Task-btn {
+  background: #a5d5f8;
+}
 
 .Add-Task-btn:hover {
   background: #49a6e9;
   color: #fff;
+}
+.Edit-Task-btn {
+  color: #fff;
+  background: #359696;
+}
+.Edit-Task-btn:hover {
+  background: #146464;
 }
 
 /* TaskList */

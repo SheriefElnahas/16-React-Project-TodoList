@@ -9,8 +9,11 @@ function AddTask({ onAddTask }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    if (newTask.length === 0) {
+      return;
+    }
     onAddTask(newTask);
+
     setNewTask('');
   };
   return (
