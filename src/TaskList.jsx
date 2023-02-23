@@ -1,7 +1,7 @@
 import { FaTrash } from 'react-icons/fa';
 import { FaPen } from 'react-icons/fa';
 
-function TaskList({ tasks, onEditClick }) {
+function TaskList({ tasks, onEditClick, onDeleteClicked }) {
   return (
     <div>
       <ul className="Task-List">
@@ -11,7 +11,7 @@ function TaskList({ tasks, onEditClick }) {
               {taskName}
               <div className="icons">
                 <FaPen onClick={() => onEditClick(taskId)} />
-                <FaTrash />
+                <FaTrash onClick={() => onDeleteClicked(taskId)} />
               </div>
             </li>
           );

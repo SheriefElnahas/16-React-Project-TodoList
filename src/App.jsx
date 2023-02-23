@@ -57,13 +57,20 @@ function App() {
     setToggleEdit(false);
   };
 
+  const onDeleteClicked = (taskId) => {
+    setTasks((prevTasks) => {
+      const filteredArr = prevTasks.filter((task) => task.taskId !== taskId);
+      return filteredArr;
+    });
+  };
+
   return (
     <div className="App">
       <h1>Todo App</h1>
 
       {!toggleEdit && <AddTask onAddTask={onAddTask} />}
       {toggleEdit && <EditTask selectedTask={selectedTask} onUpdateTask={onUpdateTask} />}
-      <TaskList tasks={tasks} onEditClick={onEditClick} />
+      <TaskList tasks={tasks} onEditClick={onEditClick} onDeleteClicked={onDeleteClicked} />
     </div>
   );
 }
