@@ -5,21 +5,26 @@ import TaskList from './TaskList';
 import EditTask from './EditTask';
 
 import { nanoid } from 'nanoid';
+// const initalTasks = [
+//   {
+//     taskName: 'Study Web Development',
+//     taskId: nanoid(),
+//   },
+//   {
+//     taskName: 'Study Quran',
+//     taskId: nanoid(),
+//   },
+// ];
 
 function App() {
-  const [tasks, setTasks] = useState([
-    {
-      taskName: 'Study Web Development',
-      taskId: nanoid(),
-    },
-    {
-      taskName: 'Study Quran',
-      taskId: nanoid(),
-    },
-  ]);
+  const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')) || []);
 
   const [selectedTask, setSelectedTask] = useState();
   const [toggleEdit, setToggleEdit] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
 
   const onAddTask = (task) => {
     const newTask = {
