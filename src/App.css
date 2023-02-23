@@ -54,7 +54,6 @@ body {
 }
 
 /* TaskList */
-
 .Task-List {
   list-style: none;
   padding: 0;
@@ -65,7 +64,7 @@ body {
   margin: 10px 0;
   font-weight: bold;
   border-radius: 3px;
-  width: 98%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
