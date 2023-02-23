@@ -27,7 +27,7 @@ function App() {
       taskId: nanoid(),
     };
 
-    setTasks((prevTasks) => [...prevTasks, newTask]);
+    setTasks((prevTasks) => [newTask, ...prevTasks]);
   };
 
   const onEditClick = (taskId) => {
@@ -64,6 +64,12 @@ function App() {
     });
   };
 
+  const onClearClicked = () => {
+    setTasks((_) => {
+      return [];
+    });
+  };
+
   return (
     <div className="App">
       <h1>Todo App</h1>
@@ -71,6 +77,11 @@ function App() {
       {!toggleEdit && <AddTask onAddTask={onAddTask} />}
       {toggleEdit && <EditTask selectedTask={selectedTask} onUpdateTask={onUpdateTask} />}
       <TaskList tasks={tasks} onEditClick={onEditClick} onDeleteClicked={onDeleteClicked} />
+      {tasks.length > 0 && (
+        <button onClick={onClearClicked} className="App-delete-btn">
+          Clear All
+        </button>
+      )}
     </div>
   );
 }
